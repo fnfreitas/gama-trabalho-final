@@ -8,6 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 import br.gama.trabalhofinal.model.Solicitacao;
 
 public interface SolicitacaoDAO extends CrudRepository <Solicitacao, Integer> {
-    public List<Solicitacao> findByStatus(char status);
+    public List<Solicitacao> findByStatus(String status);
     //public List<Solicitacao> findAllByData(LocalDate data);
 }

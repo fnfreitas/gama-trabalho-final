@@ -24,7 +24,7 @@ public class SolicitacaoController {
 
     //listar solicitações por status
     @GetMapping("/solicitacao/status/{status}")
-    public List<Solicitacao> buscaPorStatus(@PathVariable char status){
+    public List<Solicitacao> buscaPorStatus(@PathVariable String status){
         List<Solicitacao> lista = dao.findByStatus(status);
         return lista;
     }
@@ -49,7 +49,7 @@ public class SolicitacaoController {
 
     
     //atualizar o status da solicitação
-    @PutMapping("/solicitacao/status")
+    @PutMapping("/solicitacao/atualiza-status")
     public ResponseEntity<Boolean> alterarStatus(@RequestBody Solicitacao solicitacaoId){
         Solicitacao solicitacao = dao.findById(solicitacaoId.getNumSeq()).orElse(null);
 
