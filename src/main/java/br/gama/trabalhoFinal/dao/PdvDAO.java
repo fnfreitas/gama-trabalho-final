@@ -1,9 +1,9 @@
-package br.gama.trabalhoFinal.dao;
+package br.gama.trabalhofinal.dao;
 
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.gama.trabalhoFinal.model.Pdv;
+import br.gama.trabalhofinal.model.Pdv;
 
 public interface PdvDAO extends CrudRepository <Pdv, Integer> {
 

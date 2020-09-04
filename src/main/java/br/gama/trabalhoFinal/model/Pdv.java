@@ -1,4 +1,4 @@
-package br.gama.trabalhoFinal.model;
+package br.gama.trabalhofinal.model;
 
 
 import java.util.List;
@@ -16,28 +16,28 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
-@Table(name ="pdv")
+@Table(name ="dadospdv")
 public class Pdv {
 
     @Id //chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-numeração
-    @Column(name="id")
+    @Column(name="idPDV")
     private int id;
 
-    @Column(name="numero_ponto", nullable = false)
+    @Column(name="numPontoPDV", nullable = false)
     private int numeroPonto;
 
-    @Column(name="nome", length = 100, nullable = false)
+    @Column(name="nomePDV", length = 100, nullable = false)
     private String nome;
 
-    @Column(name="endereco", length = 100, nullable = false)
+    @Column(name="enderecoPDV", length = 100, nullable = false)
     private String email;
 
-    @Column(name="telefone", length = 20, nullable = false)
+    @Column(name="telefonePDV", length = 20, nullable = false)
     private String telefone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pdvId")
-    @JsonIgnoreProperties("pdvId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pdvIdSolic")
+    @JsonIgnoreProperties("pdvIdSolic")
     private List<Solicitacao> solicitacoes;
 
     public int getId() {

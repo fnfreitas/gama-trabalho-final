@@ -1,4 +1,4 @@
-package br.gama.trabalhoFinal.model;
+package br.gama.trabalhofinal.model;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -15,25 +15,25 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "Solicitacao")
+@Table(name = "dadosolic")
 public class Solicitacao {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="num_seq")
+    @Column(name="numseqsolic")
     private int numSeq;
 
 
-    @Column(name="nome_tecnico", length = 100, nullable = false)
+    @Column(name="nometecnicosolic", length = 100, nullable = false)
     private String nomeTecnico;
 
-    @Column(name="operadora", length = 50, nullable = false)
+    @Column(name="operadorasolic", length = 50, nullable = false)
     private String operadora;
 
-    @Column(name="telefone", length = 20, nullable = false)
+    @Column(name="telefonesolic", length = 20, nullable = false)
     private String telefone;
 
-    @Column(name="doc", length = 20, nullable = false)
+    @Column(name="docsolic", length = 20, nullable = false)
     private String doc;
      
     @Column(name="data")
@@ -48,7 +48,7 @@ public class Solicitacao {
 
     @ManyToOne
     @JsonIgnoreProperties("solicitacoes")
-    private Pdv pdvId;
+    private Pdv pdvIdSolic;
 
     public int getNumSeq() {
         return numSeq;
@@ -107,11 +107,11 @@ public class Solicitacao {
     }
 
     public Pdv getPdvId() {
-        return pdvId;
+        return pdvIdSolic;
     }
 
     public void setPdvId(Pdv pdvId) {
-        this.pdvId = pdvId;
+        this.pdvIdSolic = pdvId;
     }
 
     

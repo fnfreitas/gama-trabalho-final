@@ -1,4 +1,4 @@
-package br.gama.trabalhoFinal.controller;
+package br.gama.trabalhofinal.controller;
 
 
 import java.util.List;
@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import br.gama.trabalhoFinal.dao.PdvDAO;
-import br.gama.trabalhoFinal.model.Pdv;
+
+import br.gama.trabalhofinal.dao.PdvDAO;
+import br.gama.trabalhofinal.model.Pdv;
 
 @RestController
 @CrossOrigin("*")

@@ -1,4 +1,4 @@
-package br.gama.trabalhoFinal.controller;
+package br.gama.trabalhofinal.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,13 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gama.trabalhoFinal.dao.SolicitacaoDAO;
-import br.gama.trabalhoFinal.model.Solicitacao;
+import br.gama.trabalhofinal.dao.SolicitacaoDAO;
+import br.gama.trabalhofinal.model.Solicitacao;
 
 @RestController
 @CrossOrigin("*")
@@ -35,17 +35,16 @@ public class SolicitacaoController {
         return lista;
     }
 
-    //cadastrar nova solicitacao
-    @PutMapping("/solicitacao/nova")
-    public ResponseEntity<Boolean> alterarStatus(@RequestBody Solicitacao novaSolicitacao){
-       
-        if(novaSolicitacao != null){
-            dao.save(novaSolicitacao);
-            return ResponseEntity.ok(true);
-        }else{
-            return ResponseEntity.ok(false);
-        }
+ 
 
+    @PostMapping("/solicitacao/nova")
+    public ResponseEntity<Solicitacao> novaSolicitacao(@RequestBody Solicitacao solicit) {
+        try {
+            Solicitacao novo = dao.save(solicit); // salva o usuário no BD
+            return ResponseEntity.ok(novo); // retorna os dados do usuário inserido no BD
+        } catch (Exception ex) {
+            return ResponseEntity.status(400).build(); // 400 = bad request (dados incorretos)
+        }
     }
 
     /*
