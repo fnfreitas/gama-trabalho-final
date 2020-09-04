@@ -21,23 +21,23 @@ public class Pdv {
 
     @Id //chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto-numeração
-    @Column(name="idPDV")
+    @Column(name="idpdv")
     private int id;
 
-    @Column(name="numPontoPDV", nullable = false)
+    @Column(name="numpontopdv", nullable = false)
     private int numeroPonto;
 
-    @Column(name="nomePDV", length = 100, nullable = false)
+    @Column(name="nomepdv", length = 100, nullable = false)
     private String nome;
 
-    @Column(name="enderecoPDV", length = 100, nullable = false)
+    @Column(name="enderecopdv", length = 100, nullable = false)
     private String email;
 
-    @Column(name="telefonePDV", length = 20, nullable = false)
+    @Column(name="telefonepdv", length = 20, nullable = false)
     private String telefone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pdvIdSolic")
-    @JsonIgnoreProperties("pdvIdSolic")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pdvidsolic")
+    @JsonIgnoreProperties("pdvidsolic")
     private List<Solicitacao> solicitacoes;
 
     public int getId() {

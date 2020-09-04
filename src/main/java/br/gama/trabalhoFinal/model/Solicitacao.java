@@ -48,7 +48,7 @@ public class Solicitacao {
 
     @ManyToOne
     @JsonIgnoreProperties("solicitacoes")
-    private Pdv pdvIdSolic;
+    private Pdv pdvidsolic;
 
     public int getNumSeq() {
         return numSeq;
@@ -106,14 +106,22 @@ public class Solicitacao {
         this.hora = hora;
     }
 
-    public Pdv getPdvId() {
-        return pdvIdSolic;
-    }
 
-    public void setPdvId(Pdv pdvId) {
-        this.pdvIdSolic = pdvId;
-    }
 
-    
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Pdv getPdvidsolic() {
+		return pdvidsolic;
+	}
+
+	public void setPdvidsolic(Pdv pdvidsolic) {
+		this.pdvidsolic = pdvidsolic;
+	}
 
 }
