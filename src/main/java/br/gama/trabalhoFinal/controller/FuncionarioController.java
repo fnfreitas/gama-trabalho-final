@@ -40,7 +40,7 @@ public class FuncionarioController {
         }
     }
 
-    //listar todos as Solicitações
+    //listar todos os funcionarios
     @GetMapping("/funcionarios")
     public List<Funcionario> listarTodos(){
         List<Funcionario> lista = (List<Funcionario>) dao.findAll();
