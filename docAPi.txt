@@ -1,0 +1,68 @@
+Documentação Back-End
+
+1) Endpoint para cadastrar nova solicitação
+
+http://localhost:8080/solicitacao/nova
+Method: POST
+
+Ex:
+
+{
+     "data": "03/09/2020",
+     "doc" : "teste", 
+     "hora": "10:00:00", 
+     "nomeTecnico" : "Joao", 
+     "operadora" : "vivo", 
+     "status" : "A",
+     "telefone" : "55555",
+     "pdvidsolic" : {"id":1}
+     
+}
+
+2) Endpoint para login via email/racf e senha
+
+http://localhost:8080/funcionario/login
+Method: POST
+
+Ex:
+
+{
+    "email": "marcos@itau.com.br",
+    "funcionalFunc" :  "987654321",
+    "psw": "12345"
+}
+
+
+3) Endpoint para atualizar status de solicitação
+
+http://localhost:8080/solicitacao/nova
+Method: PUT
+
+Ex:
+
+{
+    "numSeq": 1,
+    "status": "B"    
+}
+
+
+
+4) Endpoint para recuperar lista de PDVs
+
+http://localhost:8080/pdvs
+Method: GET
+
+
+5) Endpoint para recuperar solicitações por STATUS (ou todas)
+
+Todas: http://localhost:8080/pdvs
+Method GET
+
+Por Status: http://localhost:8080/solicitacao/status/{status}
+Method GET
+
+Extra:
+
+6) Busca solicitacao por ID
+http://localhost:8080/solicitacao/1
+Method: GET
